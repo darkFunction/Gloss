@@ -7,11 +7,11 @@ Pod::Spec.new do |s|
   s.license          = { :type => "MIT", :file => "LICENSE" }
   s.author           = { "Harlan Kellaway" => "hello@harlankellaway.com" }
   s.social_media_url = "http://twitter.com/HarlanKellaway"
-  s.source           = { :git => "https://github.com/hkellaway/Gloss.git", :tag => s.version.to_s }
   
   s.platforms     = { :ios => "8.0", :osx => "10.9", :tvos => "9.0", :watchos => "2.0" }
   s.requires_arc = true
 
   s.source_files     = 'Sources/*.{swift}'
+  s.pod_target_xcconfig = { 'SWIFT_OPTIMIZATION_LEVEL' => '-Onone' }
 
 end
