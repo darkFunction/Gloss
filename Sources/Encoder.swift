@@ -134,7 +134,13 @@ public struct Encoder {
             url in
             
             if let url = url {
-                return [key : url.absoluteString!]
+				#if swift(>=2.3)
+				let urlString = url.absoluteString!
+				#else
+				let urlString = url.absoluteString
+				#endif
+
+                return [key : urlString]
             }
             
             return nil
